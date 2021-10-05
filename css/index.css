@@ -1,1 +1,110 @@
+body{
+    margin: 0;
+    font-family: 'Nunito','san-serif';
+    background-color: #222;
+    color: white;
+}
+*{
+    box-sizing: border-box;
+}
 
+.main{
+    padding: 1em;
+}
+
+.generator{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.generator__title{
+    font-size: clamp(2.5rem,4vw,5rem);
+    margin-bottom: .2em;
+}
+
+.generator__preview{
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to right bottom,#a90198 , #bc8c1f);
+    border-radius: 10px;
+}
+
+.code{
+    width: max-content;
+    padding: 1em;
+    background-color: rgb(102, 102, 102);
+    border-radius: 4px;
+    font-size: .9rem;
+}
+
+.gen,.save{
+    all: unset;
+    padding: .5em 2em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gen{
+    background-color: #a90198;
+}
+
+.save{
+    background-color: #bc8c1f;
+}
+
+.colors{
+    margin-top:2em;
+
+}
+
+.colors__container{
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1em;
+}
+.color{
+    flex-basis: 130px;
+    aspect-ratio: 1/1;
+    background-color: coral;
+    border-radius: 10px;
+}
+
+.modal{
+    position: fixed;
+    left: 5%;
+    bottom: 0%;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.246);
+    backdrop-filter: blur(30px);
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+}
+.animate {
+    animation: modal 250ms ease forwards;
+}
+
+@media (min-width:800px) {
+    .main{
+        padding: 0;
+        width: 70%;
+        margin-inline: auto;
+    }
+}
+
+@keyframes modal {
+    0%{
+        pointer-events: none;
+        bottom: 0;
+        opacity: 0;
+    }
+    100%{
+        pointer-events: all;
+        bottom: 6%;
+        opacity: 1;
+    }
+}
